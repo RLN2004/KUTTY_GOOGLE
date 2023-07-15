@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KUTTY GOOGLE</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="petti">
+		<div class="search-bar">
+			<input type="search" name="search" id="inf" required>
+			<button class="searchbtn" onclick="srch()"><span>Search</span></button>
+		</div>
+	</div>
+
+	<script>
+		function isEmptyOrSpace(val){
+			return val === null || val.match(/^\s*$/) !== null;
+		}
+		function srch() {
+			let url = document.getElementById("inf").value;
+
+			if(isEmptyOrSpace(url)){
+				alert("!..PLEASE ENTER SOMETHING..!")
+			}
+			else{
+			url = "https://www.google.com/search?q="+url;
+			window.open(url,'_self');
+			}
+		}
+	</script>
+</body>
+</html>
